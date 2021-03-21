@@ -13,6 +13,7 @@
     $db = $database->connect();
 
     $product = new Products($db);
+    
     // Get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
