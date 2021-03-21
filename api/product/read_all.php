@@ -29,7 +29,8 @@
                 'imgUrl' => $imgUrl,
                 'price' => $price,
                 'created_at' => $created_at,
-                'category_id' => $category_id
+                'category_id' => $category_id,
+                'category_name' => $category_name
             );
 
             array_push($products_arr['data'], $product_item);
