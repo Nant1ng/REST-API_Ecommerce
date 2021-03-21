@@ -41,7 +41,7 @@
             $stm->execute();
             return $stm;
         }
-        
+
         // Get a product
         public function read(){
             $query = 'SELECT
@@ -75,6 +75,36 @@
            $this->category_name = $row['category_name'];
         }
 
+        // Create Product
+        public function create(){
+            $query = 'INSERT INTO ' . $this->table . '
+              SET
+                title = :title,
+                description = :description,
+                imgUrl = :imgUrl,
+                price = :price,
+                category_id = :category_id';
+            
+            $stm = $this->conn->prepare($query);
+            // Cleaning data
+            $this->title = htmlspecialchars(strip_tags($this->title));
+            $this->description = htmlspecialchars(strip_tags($this->description));
+            $this->imgUrl = htmlspecialchars(strip_tags($this->imgUrl));
+            $this->price = htmlspecialchars(strip_tags($this->price));
+            $this->category_id = htmlspecialchars(strip_tags($this->category_id));
 
+            $stm->bindParam(':title', $this->title);
+            $stm->bindParam(':description', $this->description);
+            $stm->bindParam(':imgUrl', $this->imgUrl);
+            $stm->bindParam(':price', $this->price);
+            $stm->bindParam(':category_id', $this->category_id);
+
+            if($stm->execute()) {
+                return true;
+            }
+            printf("Error: %s.\n", $stm->error);
+    
+            return false;
+        }
     }
 ?>
