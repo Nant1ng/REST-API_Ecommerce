@@ -11,7 +11,7 @@
     $db = $database->connect();
 
     $product = new Products($db);
-    $result = $product->read();
+    $result = $product->read_all();
 
     $num = $result->rowCount();
     // Check if there is any products

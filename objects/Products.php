@@ -18,8 +18,8 @@
             $this->conn = $db;
         }
 
-        // Get products
-        public function read(){
+        // Get all products
+        public function read_all(){
             $query = 'SELECT
                      c.name AS category_name,
                      p.id, 
