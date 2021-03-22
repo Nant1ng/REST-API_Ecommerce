@@ -14,7 +14,6 @@
         public $category_id;
         public $category_name;
 
-        // Constructor 
         public function __construct($db){
             $this->conn = $db;
         }
@@ -32,21 +31,21 @@
         public function read(){
             $query = 'SELECT c.name AS category_name, p.id, p.title, p.description, p.imgUrl, p.price, p.created_at, p.category_id FROM ' . $this->table . ' p LEFT JOIN categories c ON p.category_id = c.id WHERE p.id = ? LIMIT 0,1';
 
-           $stm = $this->conn->prepare($query);
-           $stm->bindParam(1, $this->id);
-           $stm->execute();
+            $stm = $this->conn->prepare($query);
+            $stm->bindParam(1, $this->id);
+            $stm->execute();
 
-           $row = $stm->fetch(PDO::FETCH_ASSOC);
-           $this->title = $row['title'];
-           $this->description = $row['description'];
-           $this->imgUrl = $row['imgUrl'];
-           $this->price = $row['price'];
-           $this->created_at = $row['created_at'];
-           $this->category_id = $row['category_id'];
-           $this->category_name = $row['category_name'];
+            $row = $stm->fetch(PDO::FETCH_ASSOC);
+            $this->title = $row['title'];
+            $this->description = $row['description'];
+            $this->imgUrl = $row['imgUrl'];
+            $this->price = $row['price'];
+            $this->created_at = $row['created_at'];
+            $this->category_id = $row['category_id'];
+            $this->category_name = $row['category_name'];
         }
 
-        // Create Product
+        // Create product
         public function create(){
             $query = 'INSERT INTO ' . $this->table . 'SET title = :title, description = :description, imgUrl = :imgUrl, price = :price, category_id = :category_id';
             
@@ -72,7 +71,7 @@
             return false;
         }
 
-        // Update Product
+        // Update product
         public function update() {
             $query = 'UPDATE ' . $this->table . ' SET title = :title, description = :description, imgUrl = :imgUrl, price = :price, category_id = :category_id WHERE id = :id';
 
@@ -101,7 +100,7 @@
             return false;
         }
 
-        // Delete Product
+        // Delete product
         public function delete() {
             $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
 
