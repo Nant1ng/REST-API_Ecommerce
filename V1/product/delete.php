@@ -1,5 +1,5 @@
 <?php
-    //http://localhost/Skola/REST_API/api/product/delete.php
+    //http://localhost/Skola/REST_API/V1/product/delete.php
     
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');

@@ -1,5 +1,5 @@
 <?php
-    //http://localhost/Skola/REST_API/api/product/read.php?id=
+    //http://localhost/Skola/REST_API/V1/product/read.php?id=
 
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');

@@ -1,5 +1,5 @@
 <?php
-    //http://localhost/Skola/REST_API/api/product/create.php
+    //http://localhost/Skola/REST_API/V1/product/create.php
 
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
@@ -13,6 +13,7 @@
     $db = $database->connect();
 
     $product = new Products($db);
+    
     // Get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
