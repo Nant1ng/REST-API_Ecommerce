@@ -22,7 +22,7 @@
         }
 
         // Get a category
-        public function read_single(){
+        public function read(){
             $query = 'SELECT id, name FROM ' . $this->table . ' WHERE id = ? LIMIT 0,1';
 
             $stm = $this->conn->prepare($query);
