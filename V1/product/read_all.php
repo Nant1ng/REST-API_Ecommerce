@@ -1,5 +1,5 @@
 <?php 
-    //http://localhost/Skola/REST_API/V1/product/read-all.php
+    //http://localhost/Skola/REST_API/V1/product/read_all.php
 
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
@@ -14,6 +14,7 @@
     $result = $product->read_all();
 
     $num = $result->rowCount();
+
     // Check if there is any products
     if($num > 0){
         $products_arr= array();
@@ -35,11 +36,12 @@
 
             array_push($products_arr['data'], $product_item);
         }
+
         // JSON output
         echo json_encode($products_arr);
-    } else{
-        echo json_encode(
-            array('message' => 'No Products Found')
-        );
+    } else {
+            echo json_encode(
+                array('message' => 'No Products Found')
+            );
     }
 ?>

@@ -7,15 +7,14 @@
         // Properties
         public $id;
         public $name;
-        public $created_at;
 
         public function __construct($db) {
             $this->conn = $db;
         }
 
         // Get all categories
-        public function read_all() {
-            $query = 'SELECT id, name, created_at FROM ' . $this->table . ' ORDER BY created_at DESC';
+        public function read_all(){
+            $query = 'SELECT id, name FROM ' . $this->table . '';
 
             $stm = $this->conn->prepare($query);
             $stm->execute();
