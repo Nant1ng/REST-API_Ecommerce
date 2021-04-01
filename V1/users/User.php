@@ -115,10 +115,29 @@
             exit;
         }
 
-        
+        $latestUserID = $writeDB->lastInsertId();
+
+        $returnData = array();
+        $returnData['user_id'] = $lastUserID;
+        $returnData['fullname'] = $fullname;
+        $returnData['email'] = $email;
+        $returnData['username'] = $username;
+
+        $response = new Response();
+        $response->setHttpStatusCode(201);
+        $response->setSuccess(true);
+        $response->addMessage("User created, welcome". $fullname);
+        $response->setData($returnData);
+        $response->send();
+        exit;
 
     } catch(PDOException $error) {
-
+        error_log("Database query error: ". $error, 0);
+        $response = new Response();
+        $response->setHttpStatusCode(500);
+        $response->setSuccess(false);
+        $response->addMessage("There was an issue creating a user account - please try again");
+        $response->send();
+        exit;
     }
-
 ?>
