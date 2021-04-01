@@ -1,6 +1,6 @@
 <?php
-    require_once('../config/Database.php');
-    require_once('../objects/Response.php');
+    require_once('../../config/Database.php');
+    require_once('../../objects/Response.php');
 
     try {
         $writeDB = DB::connectWriteDB();
@@ -79,7 +79,7 @@
 
     try {
         // Checks if a username or email already exists
-        $query = $writeDB->prepare('SELECT id FROM users WHERE username = :username AND email = :email');
+        $query = $writeDB->prepare('SELECT id FROM users WHERE username = :username OR email = :email');
         $query->bindParam(':username', $username, PDO::PARAM_STR);
         $query->bindParam(':email', $email, PDO::PARAM_STR);
         $query->execute();
@@ -101,7 +101,7 @@
         $query->bindParam(':fullname', $fullname, PDO::PARAM_STR);
         $query->bindParam(':email', $email, PDO::PARAM_STR);
         $query->bindParam(':username', $username, PDO::PARAM_STR);
-        $query->bindParam(':password', $hashed_password, PDO::PARAM_STR);
+        $query->bindParam(':password', $password_hash, PDO::PARAM_STR);
         $query->execute();
 
         $rowCount = $query->rowCount();
@@ -118,7 +118,7 @@
         $latestUserID = $writeDB->lastInsertId();
 
         $returnData = array();
-        $returnData['user_id'] = $lastUserID;
+        $returnData['user_id'] = $latestUserID;
         $returnData['fullname'] = $fullname;
         $returnData['email'] = $email;
         $returnData['username'] = $username;
@@ -126,7 +126,7 @@
         $response = new Response();
         $response->setHttpStatusCode(201);
         $response->setSuccess(true);
-        $response->addMessage("User created, welcome". $fullname);
+        $response->addMessage("User created, welcome ". $fullname);
         $response->setData($returnData);
         $response->send();
         exit;
