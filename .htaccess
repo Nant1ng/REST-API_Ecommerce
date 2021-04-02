@@ -4,4 +4,4 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d                
 RewriteCond %{REQUEST_FILENAME} !-f
 
-RewriteRule ^users$ users/users.php [L]
+RewriteRule ^users$ users/Create.php [L]
