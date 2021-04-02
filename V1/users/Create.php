@@ -78,7 +78,7 @@
     $password = $jsonData->password;
 
     try {
-        // Checks if a username or email already exists
+        // Checks if the username or email already exists
         $query = $writeDB->prepare('SELECT id FROM users WHERE username = :username OR email = :email');
         $query->bindParam(':username', $username, PDO::PARAM_STR);
         $query->bindParam(':email', $email, PDO::PARAM_STR);
