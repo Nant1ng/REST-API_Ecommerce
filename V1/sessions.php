@@ -328,7 +328,7 @@
             }
 
             if(!password_verify($password, $returned_password)) {
-                $query = $writeDB->prepare("UPDATE users set loginattempts = loginattempts+1 WHERE id = :id");
+                $query = $writeDB->prepare("UPDATE users SET loginattempts = loginattempts+1 WHERE id = :id");
                 $query->bindParam(':id', $returned_id, PDO::PARAM_INT);
                 $query->execute();
     
