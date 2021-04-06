@@ -5,7 +5,7 @@
 
     try {
         $writeDB = DB::connectWriteDB();
-        
+
     } catch(PDOException $error) {
         error_log("Connection error - ". $error, 0);
         $response = new Response();
@@ -18,6 +18,7 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once('../authorization.php');
+        
         if($returned_role !== 'admin') {
             $response = new Response();
             $response->setHttpStatusCode(405);
