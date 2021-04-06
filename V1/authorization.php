@@ -12,7 +12,7 @@
     $accesstoken = $_SERVER['HTTP_AUTHORIZATION'];
 
     try {
-        $query = $writeDB->prepare('SELECT userid, accesstokenexpiry, useractive, loginattempts FROM sessions, users WHERE sessions.userid = users.id AND accesstoken = :accesstoken');
+        $query = $writeDB->prepare('SELECT userid, accesstokenexpiry, useractive, loginattempts, users.role AS role FROM sessions, users WHERE sessions.userid = users.id AND accesstoken = :accesstoken');
         $query->bindParam(':accesstoken', $accesstoken, PDO::PARAM_STR);
         $query->execute();
     
@@ -33,6 +33,7 @@
         $returned_accesstokenexpiry = $row['accesstokenexpiry'];
         $returned_useractive = $row['useractive'];
         $returned_loginattempts = $row['loginattempts'];
+        $returned_role = $row['role'];
     
         if($returned_useractive !== 'Y') {
             $response = new Response();
