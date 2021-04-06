@@ -41,7 +41,7 @@
                 http_response_code(500);
                 $this->_responseData['statusCode'] = 500;
                 $this->_responseData['success'] = false;
-                $this->_addMessage("Response creation error");
+                $this->addMessage("Response creation error");
                 $this->_responseData['messages'] = $this->_messages;
             } else {
                 http_response_code($this->_httpStatusCode);

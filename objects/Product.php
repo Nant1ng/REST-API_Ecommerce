@@ -50,7 +50,7 @@
         }
 
         public function setProductTitle($product_title) {
-            if(strlen($product_title) < 0 || strlen($$product_title) > 255) {
+            if(strlen($product_title) < 0 || strlen($product_title) > 255) {
                 throw new ProductException("Product Title Error");
             }
             $this->_product_title = $product_title;
@@ -77,7 +77,7 @@
             $this->_stock = $stock;
         }
 
-        public function setImgeUrl($img_url) {
+        public function setImageUrl($img_url) {
             if(strlen($img_url) < 0 || strlen($img_url) > 1000) {
                 throw new ProductException("Product Image Url Error");
             }
