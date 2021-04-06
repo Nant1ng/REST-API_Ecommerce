@@ -7,15 +7,15 @@
         private $_description;
         private $_price;
         private $_stock;
-        private $_imgUrl;
+        private $_img_url;
 
-        public function __construct($id, $product_title, $description, $price, $stock, $imgUrl) {
+        public function __construct($id, $product_title, $description, $price, $stock, $img_url) {
             $this->setID($id);
             $this->setProductTitle($product_title);
             $this->setDescription($description);
             $this->setPrice($price);
             $this->setStock($stock);
-            $this->setImageUrl($imgUrl);
+            $this->setImageUrl($img_url);
         }
 
         public function getID() {
@@ -39,7 +39,7 @@
         }
 
         public function getImageUrl() {
-            return $this->_imgUrl;
+            return $this->_img_url;
         }
 
         public function setID($id) {                           // 9223372036854775807 = Största talet som får finnas i en SQL Databasen
@@ -77,11 +77,11 @@
             $this->_stock = $stock;
         }
 
-        public function setImgeUrl($imgUrl) {
-            if(strlen($imgUrl) < 0 || strlen($imgUrl) > 1000) {
-                throw new ProductException("Product ImgUrl Error");
+        public function setImgeUrl($img_url) {
+            if(strlen($img_url) < 0 || strlen($img_url) > 1000) {
+                throw new ProductException("Product Image Url Error");
             }
-            $this->_imgUrl = $imgUrl;
+            $this->_img_url = $img_url;
         }   
 
         public function returnProductAsArray() {
