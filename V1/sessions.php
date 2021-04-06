@@ -248,9 +248,9 @@
             exit;
         }
 
-        $rawPacthData = file_get_contents('php://input');
+        $rawPostData = file_get_contents('php://input');
 
-        if (!$jsonData = json_decode($rawPostData)) {
+        if(!$jsonData = json_decode($rawPostData)) {
             $response = new Response();
             $response->setHttpStatusCode(400);
             $response->setSuccess(false);
@@ -259,7 +259,7 @@
             exit;
         }
 
-        if (!isset($jsonData->username) || !isset($jsonData->password)) {
+        if(!isset($jsonData->username) || !isset($jsonData->password)) {
             $response = new Response();
             $response->setHttpStatusCode(400);
             $response->setSuccess(false);
@@ -269,7 +269,7 @@
             exit;
         }
 
-        if (strlen($jsonData->username) < 1 || strlen($jsonData->username) > 255 || strlen($jsonData->password) < 1 || strlen($jsonData->password) > 255) {
+        if(strlen($jsonData->username) < 1 || strlen($jsonData->username) > 255 || strlen($jsonData->password) < 1 || strlen($jsonData->password) > 255) {
             $response = new Response();
             $response->setHttpStatusCode(400);
             $response->setSuccess(false);
