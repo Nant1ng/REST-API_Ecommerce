@@ -5,7 +5,6 @@
 
     try {
         $writeDB = DB::connectWriteDB();
-        $readDB = DB::connectReadDB();
 
     } catch(PDOException $error) {
         error_log("Connection error - ". $error, 0);
