@@ -122,7 +122,7 @@
                         exit;
                     }
 
-                    while($row = $query->fetch(FETCH_ASSOC)) {
+                    while($row = $query->fetch(PDO::FETCH_ASSOC)) {
                         $product = new Product($row['id'], $row['product_title'], $row['description'], $row['price'], $row['stock'], $row['img_url']);
                     }
 
@@ -142,7 +142,7 @@
                     }
 
                     if($price_updated === true) {
-                        $product->setPrice($jsonData->description);
+                        $product->setPrice($jsonData->price);
                         $up_price = $product->getPrice();
                         $query->bindParam(":price", $up_price, PDO::PARAM_INT);
                     }
