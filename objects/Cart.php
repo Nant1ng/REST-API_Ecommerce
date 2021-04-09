@@ -83,14 +83,5 @@
             return $cart;
         }
 
-        public function returnAddProductToCartAsArray() {
-            $cart = array();
-            $cart['id'] = $this->getID();
-            $cart['productid'] = $this->getProductID();
-            $cart['userid'] = $this->getUserID();
-            $cart['product_title'] = $this->getProductTitle();
-            $cart['price'] = $this->getPrice();
-            return $cart;
-        }
     }
 ?>
