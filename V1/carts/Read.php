@@ -4,7 +4,7 @@
     require_once('../../objects/Cart.php');
 
     try {
-        $writeDB = DB::connectWriteDB();
+        $readDB = DB::connectReadDB();
 
     } catch (PDOException $error) {
         error_log("Connection error - " . $error, 0);
@@ -21,7 +21,7 @@
             require_once('../authorization.php');
 
             try {
-                $query = $writeDB->prepare('SELECT C.id, C.productid, C.userid, P.product_title, P.price FROM cart C INNER JOIN product P ON C.productid = P.id WHERE C.userid = :userid');
+                $query = $readDB->prepare('SELECT C.id, C.productid, C.userid, P.product_title, P.price FROM cart C INNER JOIN product P ON C.productid = P.id WHERE C.userid = :userid');
                 $query->bindParam(':userid', $returned_userid, PDO::PARAM_INT);
                 $query->execute();
 
