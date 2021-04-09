@@ -60,15 +60,16 @@
 
         public function setProductTitle($product_title) {
             if(strlen($product_title) < 0 || strlen($product_title) > 255) {
-                throw new ProductException("Product Title Error");
+                throw new CartException("Product Title Error");
             }
             $this->_product_title = $product_title;
         }
 
         public function setPrice($price) {
             if(!is_numeric($price) || $price <= 0) {
-                throw new ProductException("Product Price Error");
+                throw new CartException("Product Price Error");
             }
+
             $this->_price = $price;
         }
 
@@ -88,6 +89,7 @@
             $cart['productid'] = $this->getProductID();
             $cart['userid'] = $this->getUserID();
             $cart['product_title'] = $this->getProductTitle();
+            $cart['price'] = $this->getPrice();
             return $cart;
         }
     }
