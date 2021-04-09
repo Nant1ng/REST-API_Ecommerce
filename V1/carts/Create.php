@@ -76,7 +76,7 @@
 
                 while($row = $query->fetch(PDO::FETCH_ASSOC)) {
                     $cart = new Cart($row['id'], $row['productid'], $row['userid'], $row['product_title'], $row['price']);
-                    $cartArray[] = $cart->returnAddProductToCartAsArray();
+                    $cartArray[] = $cart->returnCartAsArray();
                 }
 
                 $returnData = array();
