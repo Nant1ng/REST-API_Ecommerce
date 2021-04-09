@@ -64,7 +64,7 @@
                 exit;
 
             } catch (PDOException $error) {
-                error_log("Database query error - " . $error, 0); // Spara felmeddelandet i PHP logfile
+                error_log("Database query error - " . $error, 0);
                 $response = new Response();
                 $response->setHttpStatusCode(500);
                 $response->setSuccess(false);
