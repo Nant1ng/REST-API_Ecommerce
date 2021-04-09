@@ -34,10 +34,10 @@
                     $response->addMessage("Failed to retrive product after added to cart");
                     $response->send();
                     exit;
-                } 
+                }
 
                 $cartArray = array();
-                
+
                 while($row = $query->fetch(PDO::FETCH_ASSOC)) {
                     $cart = new Cart($row['id'], $row['productid'], $row['userid'], $row['product_title'], $row['price']);
                     $cartArray[] = $cart->returnCartAsArray();
