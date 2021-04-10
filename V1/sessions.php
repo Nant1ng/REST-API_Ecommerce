@@ -167,6 +167,7 @@
                     exit;
                 }
 
+                // Gör så accesstoken och refreshtoken är väldigt unika.
                 $accesstoken = base64_encode(bin2hex(openssl_random_pseudo_bytes(24)) . time());
                 $refreshtoken = base64_encode(bin2hex(openssl_random_pseudo_bytes(24)) . time());
 
@@ -236,7 +237,7 @@
             exit;
         }
 
-        //Hjälper mot bruteforce attacker, 1 försök per sekund max
+        //Hjälper mot bruteforce attacker, max 1 försök per sekund.
         sleep(1);
 
         if($_SERVER['CONTENT_TYPE'] !== 'application/json') {
@@ -340,7 +341,7 @@
                 exit;
             }
 
-            // Skapar accesstoken och refreshtoken, jag använder time för att göra den ännu mer unik.
+        // Gör så accesstoken och refreshtoken är väldigt unika.
         $accesstoken = base64_encode(bin2hex(openssl_random_pseudo_bytes(24)) . time());
         $refreshtoken = base64_encode(bin2hex(openssl_random_pseudo_bytes(24)) . time());
 
