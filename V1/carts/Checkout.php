@@ -38,6 +38,7 @@
                     exit;
                 }
 
+                $cartArray = array();
                 $totalPrice = 0;
 
                 while($row = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -57,7 +58,25 @@
                 $response->addMessage("Cart checked out");
                 $response->setData($returnData);
                 $response->send();
+                
+                if($returnData = true) {
+                    try {
+                        $query = $writeDB->prepare('DELETE FROM cart WHERE userid = :userid');
+                        $query->bindParam(':userid', $returned_userid, PDO::PARAM_INT);
+                        $query->execute();
+
+                    } catch (PDOException $error) {
+                        $response = new Response();
+                        $response->setHttpStatusCode(500);
+                        $response->setSuccess(false);
+                        $response->addMessage("Failed to checkout cart");
+                        $response->send();
+                        exit;
+                    }
+                }
+                
                 exit;
+
 
             } catch (CartException $error) {
                 $response = new Response();
