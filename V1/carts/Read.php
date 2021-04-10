@@ -5,6 +5,7 @@
 
     try {
         $readDB = DB::connectReadDB();
+        $writeDB = DB::connectWriteDB();
 
     } catch (PDOException $error) {
         error_log("Connection error - " . $error, 0);
@@ -31,7 +32,7 @@
                     $response = new response();
                     $response->setHttpStatusCode(500);
                     $response->setSuccess(false);
-                    $response->addMessage("Failed to retrive product after added to cart");
+                    $response->addMessage("Cart is empty");
                     $response->send();
                     exit;
                 }
@@ -50,7 +51,7 @@
                 $response = new Response();
                 $response->setHttpStatusCode(200);
                 $response->setSuccess(true);
-                $response->addMessage("You're cart");
+                $response->addMessage("Your cart");
                 $response->setData($returnData);
                 $response->send();
                 exit;
