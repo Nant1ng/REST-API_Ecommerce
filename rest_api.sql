@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2021 at 10:56 PM
+-- Generation Time: Apr 11, 2021 at 11:00 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -72,15 +72,6 @@ CREATE TABLE `sessions` (
   `refreshtoken` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'Refresh Token',
   `refreshtokenexpiry` datetime NOT NULL COMMENT 'Refresh Token Expiry Date/Time'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `sessions`
---
-
-INSERT INTO `sessions` (`id`, `userid`, `accesstoken`, `accesstokenexpiry`, `refreshtoken`, `refreshtokenexpiry`) VALUES
-(1, 1, 'NjMxMzBmOWUzNjY4MmE5OWMxZWEwNTIxMGU1NDNkMTI0NmMyNWRmMjY3NWE3YmJiMTYxODE2NTUxMQ==', '2021-04-11 21:25:11', 'MGE3NjE4ZWM4YjIwZmJkODhlNDBiYjc0MjczNWIyMzliMDI5ZTZlMTg4OWZkMzUwMTYxODE2NTUxMQ==', '2021-04-25 20:25:11'),
-(2, 1, 'MzM2MzQ5MDk2MDYwNmFmYTBkMDBjMTY2NDRjNmRiNWM0MTQxOThkZDg1NjJkNWY4MTYxODE2OTEwNA==', '2021-04-11 22:25:04', 'MmU2ZTk1YmRiNDYyZjc2YWUyNzc0OWM3MTcwYjBkMzQ5MDkzNTM5YTIwNGZmMmIyMTYxODE2OTEwNA==', '2021-04-25 21:25:04'),
-(3, 1, 'MTVjNTRiYzlhMWU5NzMwMDk2ZTE3YzU5MTcxM2I2NTU3NjQ2NzM3MWQ3ODcwYjQ2MTYxODE3MDU0NA==', '2021-04-11 22:49:04', 'ZjVkYThmNmM5YzRkOGQ3MjEzZjgwMDJmMTY0MTk4Y2Y0YjdmMzk1MGQxMDZiNTY3MTYxODE3MDU0NA==', '2021-04-25 21:49:04');
 
 -- --------------------------------------------------------
 
@@ -159,7 +150,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Session ID', AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Session ID';
 
 --
 -- AUTO_INCREMENT for table `users`
