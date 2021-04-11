@@ -29,8 +29,8 @@
                 exit;
             }
 
-            // 5 bara för vissa att det funkar.
-            $limitPerPage = 5;
+            // 2 bara för vissa att det funkar.
+            $limitPerPage = 2;
 
             try{
                 $query = $readDB->prepare('SELECT COUNT(id) AS totalProducts FROM product');
