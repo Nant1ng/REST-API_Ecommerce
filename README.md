@@ -15,7 +15,9 @@
 ## Endpoints
 
 ### Users 
----  
+
+---
+  
 #### POST - Create user
 [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/)
 >http://localhost/Skola/REST_API/V1/users/Create.php
@@ -25,10 +27,13 @@
 >http://localhost/Skola/REST_API/V1/users/ReadAll.php 
 <br>
 You need to put the accesstoken provided in header: Authorization = accesstoken.
+
 ---
 
 ### Sessions
+
 ---
+
 #### POST - Log in
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/)
 
