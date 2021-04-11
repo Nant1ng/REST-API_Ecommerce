@@ -53,7 +53,7 @@
             exit;
         }
 
-        //strtotime för rätt format, om den är äldre än nutid så blir det error.
+        // strtotime for the correct format, if it is older than the real time it will be error.
         if(strtotime($returned_accesstokenexpiry) < time()) {
             $response = new Response();
             $response->setHttpStatusCode(401);
