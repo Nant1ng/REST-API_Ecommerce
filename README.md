@@ -17,7 +17,7 @@
 ### Users 
 
 ---
-  
+
 #### POST - Create user
 [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/)
 >http://localhost/Skola/REST_API/V1/users/Create.php
@@ -95,6 +95,7 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
 
 ### Cart
+
 ---
 
 #### POST - Add product to cart
@@ -128,6 +129,7 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
 
 ## How to 
+
 ---
 
 <details>
@@ -143,6 +145,7 @@ You need to have Content-Type: application/json in header
     "password":"Password"
 }
 ```
+
 ---
 
 ### Create Sessions: 
@@ -153,6 +156,7 @@ You need to have Content-Type: application/json in header
     "password":"Password"
 }
 ```
+
 ---
 
 ### Create Products: 
@@ -166,11 +170,15 @@ You need to have Content-Type: application/json in header
     "img_url":"img-url"
 }
 ```
+
 ---
+
 </details>
+
 ---
 
 ## Success Response Examples
+
 ---
 
 <details>
@@ -192,6 +200,7 @@ You need to have Content-Type: application/json in header
     }
 }
 ```
+
 ---
 
 ### Session created: 
@@ -211,6 +220,7 @@ You need to have Content-Type: application/json in header
     }
 }
 ```
+
 ---
 
 ### Product created: 
@@ -238,10 +248,13 @@ You need to have Content-Type: application/json in header
 ```
 
 </details>
+
 ---
 
 ## Error Respons Examples
+
 ---
+
 <details>
 <summary>Show Examples</summary>
 
@@ -256,6 +269,7 @@ You need to have Content-Type: application/json in header
     "data": null
 }
 ```
+
 --- 
 
 ### Creating Sessions Error:
@@ -270,6 +284,7 @@ You need to have Content-Type: application/json in header
     "data": null
 }
 ``` 
+
 ---
 
 ### Creating Product Error:
