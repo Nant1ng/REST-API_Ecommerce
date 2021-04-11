@@ -82,6 +82,5 @@
             $cart['price'] = $this->getPrice();
             return $cart;
         }
-
     }
 ?>
