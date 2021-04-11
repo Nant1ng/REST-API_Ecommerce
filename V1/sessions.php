@@ -40,6 +40,7 @@
         
         $accesstoken = $_SERVER['HTTP_AUTHORIZATION'];
 
+        // Log out.
         if($_SERVER['REQUEST_METHOD'] === 'DELETE') {
             try {
                 $query = $writeDB->prepare('DELETE FROM sessions WHERE id = :sessionid AND accesstoken = :accesstoken');
@@ -78,6 +79,7 @@
                 exit;
             }
 
+        // Refreshtoken så att man uppdaterar accesstokens tid.
         } elseif($_SERVER['REQUEST_METHOD'] === 'PATCH') {
             if($_SERVER['CONTENT_TYPE'] !== 'application/json') {
                 $response = new Response();
@@ -227,6 +229,8 @@
             $response->send();
             exit;
         }
+
+    // Log in.
     } elseif(empty($_GET)) {
         if($_SERVER['REQUEST_METHOD'] !== 'POST') {
             $response = new Response();
@@ -237,7 +241,7 @@
             exit;
         }
 
-        //Hjälper mot bruteforce attacker, max 1 försök per sekund.
+        // Hjälper mot bruteforce attacker, max 1 försök per sekund.
         sleep(1);
 
         if($_SERVER['CONTENT_TYPE'] !== 'application/json') {
