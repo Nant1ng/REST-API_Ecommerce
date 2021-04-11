@@ -48,7 +48,7 @@
             return $this->_role;
         }
 
-        public function setUserID($id) {
+        public function setID($id) {
         if (($id !== null) && (!is_numeric($id) || $id <= 0 || $id > 9223372036854775807 || $this->_id !== null)) {
             throw new UserException("User ID Error");
         }
@@ -99,7 +99,7 @@
 
         public function returnUserAsArray() {
         $user = array();
-        $user['user_id'] = $this->getUserID();
+        $user['id'] = $this->getID();
         $user['fullname'] = $this->getFullName();
         $user['email'] = $this->getEmail();
         $user['username'] = $this->getUsername();
