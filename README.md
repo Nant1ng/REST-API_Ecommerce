@@ -2,6 +2,7 @@
 
 - [Description](#description)
 - [Endpoints](#endpoints)
+- [Before using the code](#Before-using-the-code)
 - [How to](#how-to)
 
 ---
@@ -20,11 +21,11 @@
 
 #### POST - Create user
 [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/)
->http://localhost/Skola/REST_API/V1/users/Create.php
+>http://localhost/REST_API/V1/users/Create.php
 
 ### GET - Read all users 
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/)
->http://localhost/Skola/REST_API/V1/users/ReadAll.php 
+>http://localhost/REST_API/V1/users/ReadAll.php 
 <br>
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 
@@ -37,19 +38,19 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 #### POST - Log in
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/)
 
->http://localhost/Skola/REST_API/V1/sessions.php
+>http://localhost/REST_API/V1/sessions.php
 
 #### PATCH - Refresh accesstoken
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/)
 
->http://localhost/Skola/REST_API/V1/sessions.php?sessionid=(Your session id)</br>
+>http://localhost/REST_API/V1/sessions.php?sessionid=(Your session id)</br>
 Use the same session id you got when logged in.
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 
 #### DELETE - Log out
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/) 
 
->http://localhost/Skola/REST_API/V1/sessions.php?sessionid=(Your session id)</br>
+>http://localhost/REST_API/V1/sessions.php?sessionid=(Your session id)</br>
 Use the same session id you got when logged in. 
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
@@ -60,28 +61,28 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 #### GET - Read products
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/) 
 
->http://localhost/Skola/REST_API/V1/products/ReadAll.php?(Page number)</br>
+>http://localhost/REST_API/V1/products/ReadAll.php?(Page number)</br>
 Only 2 products per page, just to show that page nation works. </br> Pagenumber can be 1 or 2 and so on.
 ---
 
 #### GET - Read single product
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/) 
 
->http://localhost/Skola/REST_API/V1/products/Read.php?productid=(Product ID)</br>
+>http://localhost/REST_API/V1/products/Read.php?productid=(Product ID)</br>
 Product ID need to be an existing id.
 ---
 
 #### POST - Create product
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) 
 
->http://localhost/Skola/REST_API/V1/products/Create.php <br>
+>http://localhost/REST_API/V1/products/Create.php <br>
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
 
 #### DELETE - Delete product
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) 
 
->http://localhost/Skola/REST_API/V1/products/Delete.php?productid=(Product ID)</br>
+>http://localhost/REST_API/V1/products/Delete.php?productid=(Product ID)</br>
 Product ID need to be an existing id. 
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
@@ -89,7 +90,7 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 #### PATCH - Update product
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) 
 
->http://localhost/Skola/REST_API/V1/products/Update.php?productid=(Product ID)</br>
+>http://localhost/REST_API/V1/products/Update.php?productid=(Product ID)</br>
 Product ID need to be an existing id.
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
@@ -101,7 +102,7 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 #### POST - Add product to cart
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/)
 
->http://localhost/Skola/REST_API/V1/carts/Create.php?productid=(Product ID)</br>
+>http://localhost/REST_API/V1/carts/Create.php?productid=(Product ID)</br>
 Product ID need to be an existing id.
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
@@ -109,7 +110,7 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 #### DELETE - Delete product from cart
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/) 
 
->http://localhost/Skola/REST_API/V1/carts/Delete.php?productid=(Product ID)</br>
+>http://localhost/REST_API/V1/carts/Delete.php?productid=(Product ID)</br>
 Product ID need to be an existing id.
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
@@ -117,14 +118,14 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 #### GET - Read cart 
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/) 
 
->http://localhost/Skola/REST_API/V1/carts/Read.php <br> 
+>http://localhost/REST_API/V1/carts/Read.php <br> 
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
 
 #### POST - Checkout cart
 [![made-with-python](https://img.shields.io/badge/Admin-darkred)](https://shields.io/) [![made-with-python](https://img.shields.io/badge/User-red)](https://shields.io/) 
 
->http://localhost/Skola/REST_API/V1/carts/Checkout.php <br>
+>http://localhost/REST_API/V1/carts/Checkout.php <br>
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
 
@@ -270,8 +271,6 @@ You need to have Content-Type: application/json in header
 ---
 
 ## Error Respons Examples
-
-
 
 <details>
 <summary>Show Examples</summary>
