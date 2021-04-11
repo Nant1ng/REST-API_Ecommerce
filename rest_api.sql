@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2021 at 10:47 PM
+-- Generation Time: Apr 11, 2021 at 10:56 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -56,8 +56,7 @@ INSERT INTO `product` (`id`, `product_title`, `description`, `price`, `stock`, `
 (1, 'NMD_R1 V2 SHOES', 'FUTURISTISKA SNEAKERS MED EN NY, FRÄSCH LOOK.', 1499, 'Y', 'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/d54efdd118f24457b654aaf00110b4d5_9366/NMD_R1_V2_Shoes_Svart_FV9021_01_standard.jpg'),
 (2, 'R.Y.V. GRAPHIC HOODIE', 'EN MJUK HOODIE MED KONSTTRYCK AV PATRICK KYLE', 899, 'Y', 'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/56d3b756afa14aa6b8f0ac400117d5be_9366/R.Y.V._Graphic_Hoodie_Svart_GN3345_01_laydown.jpg'),
 (3, 'ADICOLOR CLASSICS PRIMEBLUE SST TRACK PANTS', 'DE INGÅR I DET KLASSISKA TRÄNINGSSTÄLLET, MED ALL KOMFORT SOM HÖR TILL.', 629, 'Y', 'https://assets.adidas.com/images/w_600,f_auto,q_auto/80f5664eaf44437589baab8a00fea2a5_9366/Adicolor_Classics_Primeblue_SST_Track_Pants_Svart_GF0210.jpg'),
-(4, 'Nike Air Force 1', 'Känslan lever vidare i Nike Air Force 1, den klassiska basketskon', 1149, 'Y', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f094af40-f82f-4fb9-a246-e031bf6fc411/sko-air-force-1-07-ZWJrWC.png'),
-(5, '', '', 1, 'Y', '');
+(4, 'Nike Air Force 1', 'Känslan lever vidare i Nike Air Force 1, den klassiska basketskon', 1149, 'Y', 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f094af40-f82f-4fb9-a246-e031bf6fc411/sko-air-force-1-07-ZWJrWC.png');
 
 -- --------------------------------------------------------
 
