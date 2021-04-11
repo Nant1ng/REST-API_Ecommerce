@@ -94,7 +94,7 @@
                         $queryFields .= "img_url = :img_url, ";
                     }
 
-                    //rtrim tar bort sista "," i query stringen
+                    // rtrim deletes the last "," of the query string.
                     $queryFields = rtrim($queryFields, ", ");
 
                     if($product_title_updated === false && $description_updated === false && $price_updated === false && $stock_updated === false && $img_url_updated === false) {

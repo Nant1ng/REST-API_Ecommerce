@@ -29,7 +29,7 @@
                 exit;
             }
 
-            // 2 bara för vissa att det funkar.
+            // 2 just to show that it works.
             $limitPerPage = 2;
 
             try{
