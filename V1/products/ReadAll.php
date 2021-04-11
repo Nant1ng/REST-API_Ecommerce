@@ -76,7 +76,7 @@
                 $returnData['total_rows'] = $productCount;
                 $returnData['total_pages'] = $numOfPages;
                 ($page < $numOfPages ? $returnData['has_next_page'] = true : $returnData['has_next_page'] = false);
-                ($page > 1 ? $returnData['has_previous_page'] = true : $returnData['has_next_page'] = false);
+                ($page > 1 ? $returnData['has_previous_page'] = true : $returnData['has_previous_page'] = false);
                 $returnData['product'] = $productArray;
 
                 $response= new Response();
