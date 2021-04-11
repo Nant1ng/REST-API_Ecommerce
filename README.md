@@ -128,9 +128,27 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 You need to put the accesstoken provided in header: Authorization = accesstoken.
 ---
 
+## Before using the code 
+
+<details>
+<summary>You need to follow this steps</summary>
+
+> You need these programs for the API to work:
+- Xampp or Mamp - Local database connection.
+- Visual Studio Code or other code editor - To open or edit the code.
+- Postman - To send requests.
+
+> Download and use the API:
+- Step 1 - Clone this repository.
+- Step 2 - Start Xampp or Mamp and open phpMyAdmin.
+- Step 3 - Use the SQL script included in the project to create database with the name rest_api.
+- Step 4 - Open Postman and start making requests!.
+
+</details>
+
+---
+
 ## How to 
-
-
 
 <details>
 <summary>Create users, sessions or products?</summary>
