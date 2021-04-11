@@ -130,7 +130,7 @@ You need to put the accesstoken provided in header: Authorization = accesstoken.
 
 ## How to 
 
----
+
 
 <details>
 <summary>Create users, sessions or products?</summary>
@@ -179,7 +179,7 @@ You need to have Content-Type: application/json in header
 
 ## Success Response Examples
 
----
+
 
 <details>
 <summary>Show Examples</summary>
@@ -253,7 +253,7 @@ You need to have Content-Type: application/json in header
 
 ## Error Respons Examples
 
----
+
 
 <details>
 <summary>Show Examples</summary>
