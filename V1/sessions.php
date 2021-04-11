@@ -390,6 +390,7 @@
             $response = new Response();
             $response->setHttpStatusCode(201);
             $response->setSuccess(true);
+            $response->addMessage("Logged in");
             $response->setData($returnData);
             $response->send();
             exit;
